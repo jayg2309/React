@@ -9,6 +9,8 @@ function App() {
   const [password, setPassword] = useState("");
 
   const passwordRef = useRef(null);
+  // {current : null} -> useRef returns object
+  // persists between different renders but doesn't cause to re render like state does
 
   // userCallback() --> as long as things don't change too frequently, use this
   const generatePassword = useCallback(() => {
@@ -38,7 +40,7 @@ function App() {
 
   useEffect(() => {
     generatePassword();
-  }, [length, numberAllowed, charAllowed]);
+  }, [length, numberAllowed, charAllowed]); // whenever these 3 change, it reruns whatever method is inside
 
   return (
     <>
