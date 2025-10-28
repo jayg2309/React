@@ -11,7 +11,7 @@ function useCurrencyInfo(currency) {
       `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`
     )
       .then((res) => {
-        res.json();
+        return res.json(); // return the res for further processing (getting the curr)
       })
       .then((res) => {
         setData(res[currency]);
