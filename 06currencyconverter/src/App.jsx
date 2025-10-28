@@ -15,7 +15,8 @@ function App() {
 
   //fn for converting
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to]);
+    const result = amount * currencyInfo[to];
+    setConvertedAmount(result.toFixed(2));
   };
 
   //swapping
@@ -41,6 +42,7 @@ function App() {
               convert();
             }}
           >
+            {/* FROM div  */}
             <div className="w-full mb-1">
               <InputBox
                 label="from"
@@ -61,6 +63,7 @@ function App() {
               </button>
             </div>
 
+            {/* TO DIV  */}
             <div className="w-full mb-1">
               <InputBox
                 label="to"
